@@ -1,0 +1,61 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-serif: "Playfair Display", serif;
+
+  /* Theme Colors */
+  --color-bg-base: var(--bg-base);
+  --color-text-base: var(--text-base);
+  --color-accent-base: var(--accent-base);
+  --color-border-base: var(--border-base);
+  --color-surface-base: var(--surface-base);
+}
+
+@layer base {
+  :root {
+    --bg-base: #F8F9FA;
+    --text-base: #1A1A1A;
+    --accent-base: #000000;
+    --border-base: rgba(0, 0, 0, 0.1);
+    --surface-base: #FFFFFF;
+  }
+
+  [data-theme='dark'] {
+    --bg-base: #0F0F0F;
+    --text-base: #F0F0F0;
+    --accent-base: #FFFFFF;
+    --border-base: rgba(255, 255, 255, 0.1);
+    --surface-base: #1A1A1A;
+  }
+
+  [data-theme='editorial'] {
+    --bg-base: #E4E3E0;
+    --text-base: #141414;
+    --accent-base: #141414;
+    --border-base: rgba(0, 0, 0, 0.15);
+    --surface-base: #F0EDE9;
+  }
+
+  body {
+    @apply bg-bg-base text-text-base transition-colors duration-300;
+  }
+
+  .prose pre {
+    @apply bg-transparent p-0 m-0 border-none;
+  }
+  
+  .prose code {
+    @apply text-inherit bg-transparent p-0;
+  }
+  
+  .shiki-output pre {
+    @apply !bg-transparent !p-0 !m-0 overflow-visible;
+  }
+  
+  .shiki-output code {
+    @apply !bg-transparent !p-0 font-mono text-sm leading-relaxed;
+  }
+}

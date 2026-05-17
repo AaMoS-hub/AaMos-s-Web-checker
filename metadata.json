@@ -1,0 +1,6 @@
+{
+  "name": "Arachne: Web Recon Tool",
+  "description": "An advanced AI-powered web reconstruction engine. Extract code, architecture diagrams (logic), and visual grammar from any live URL.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
